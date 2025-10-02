@@ -227,8 +227,9 @@ setInterval(() => {
 }, 1000)
 
 
-
-
+// 默认存档
+append("学习Vue3", get_time(), "daiban");
+append("练习高数", get_time(), "daiban");
 
 
 
