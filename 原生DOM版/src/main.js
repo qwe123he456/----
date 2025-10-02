@@ -76,8 +76,8 @@ function getStyle(
 
 /** 增添列表项 
  * @param words 待办事项的文字
- * @param words 待办事项的创建时间
- * @param words 待办事项的状态
+ * @param time 待办事项的创建时间
+ * @param state 待办事项的状态
  */
 function append(words = "", time = "", state = "") {
 
@@ -138,7 +138,7 @@ function append(words = "", time = "", state = "") {
 						todo_item.style["margin-right"] = (`${parseInt(oldValue) - offset / 50}px`);
 
 						oldValue = getStyle(todo_item, "opacity");
-						todo_item.style["opacity"] = oldValue - 0.02;
+						todo_item.style["opacity"] = oldValue - 0.025;
 
 						con += offset / 50;
 						con < offset ? a(offset) : todo_item.parentNode.removeChild(todo_item);
