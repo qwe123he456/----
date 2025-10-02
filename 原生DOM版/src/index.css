@@ -1,0 +1,170 @@
+html {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #86f3ff;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+h1 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 2.5rem;
+  font-family: "微软雅黑";
+  font-weight: 700;
+  cursor: default;
+  user-select: none;
+}
+#todo_list {
+  width: 500px;
+  display: flex;
+  background-color: #24dd9f;
+  border-width: 5px;
+  border-color: #246c3d;
+  border-style: solid;
+  border-radius: 10px;
+  border-color: blue;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+#todo_list .todo_item {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  background-color: #26c4d5;
+  justify-content: space-evenly;
+  display: flex;
+  min-height: 60px;
+  border-width: 5px;
+  border-color: #246c3d;
+  border-style: solid;
+  border-radius: 10px;
+}
+#todo_list .todo_item:last-child {
+  margin-bottom: 20px;
+  background-color: #26c4d5;
+}
+#todo_list .todo_item:last-child:hover {
+  background-color: #26c4d5;
+}
+#todo_list .todo_item:hover {
+  background-color: #2be2f6;
+}
+#todo_list .todo_item > #todo_words {
+  display: flex;
+  font-family: "宋体";
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: left;
+  vertical-align: middle;
+  align-items: center;
+  width: 62%;
+  overflow-wrap: anywhere;
+}
+#todo_list .todo_item > #controller {
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin-top: calc(-1*10px);
+  margin-bottom: calc(-1*10px);
+}
+#todo_list .todo_item > #controller > #time_record {
+  display: flex;
+  cursor: default;
+}
+#todo_list .todo_item > #controller > #buttons {
+  display: flex;
+  width: auto;
+  justify-content: space-evenly;
+}
+#todo_list .todo_item > #controller > #buttons > button {
+  display: flex;
+  height: 30px;
+  width: 30px;
+  border-radius: 10px;
+  margin-top: auto;
+  margin-bottom: auto;
+  cursor: default;
+  user-select: none;
+}
+#todo_list .todo_item > #controller > #buttons > button:hover {
+  cursor: pointer;
+  background-color: #cfff55;
+}
+#todo_list .todo_item > #controller > #buttons > button:active {
+  background-color: #ff2121;
+}
+#todo_list .todo_item > #controller > #buttons > button .x {
+  font-size: 40px;
+  margin-left: -4px;
+  margin-top: -9px;
+}
+#todo_list .todo_item > #controller > #buttons > button#state_button {
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+#todo_list .todo_item > #controller > #buttons > button#state_button.zhongyao {
+  background-color: #ff3c3c;
+}
+#todo_list .todo_item > #controller > #buttons > button#state_button.zhongyao:active {
+  background-color: #304fff;
+}
+#todo_list .todo_item > #controller > #buttons > button#state_button.daiban {
+  background-color: #304fff;
+}
+#todo_list .todo_item > #controller > #buttons > button#state_button.daiban:active {
+  background-color: #888888;
+}
+#todo_list .todo_item > #controller > #buttons > button#state_button.jiban {
+  background-color: #969696;
+}
+#todo_list .todo_item > #controller > #buttons > button#state_button.jiban:active {
+  background-color: #ff3c3c;
+}
+#todo_list .todo_item > #controller > #buttons > button#state_button > #state_words {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  color: #fff;
+  width: 30px;
+  text-align: center;
+}
+#todo_list .todo_item > #controller > #buttons > button#append {
+  display: flex;
+  border-radius: 10px;
+  margin: auto;
+  width: 70%;
+  justify-content: space-evenly;
+  align-content: center;
+  font-family: "微软雅黑";
+  font-size: 1rem;
+  font-weight: 520;
+  text-align: justify;
+  line-height: 25px;
+}
+#todo_list .todo_item > #controller > #buttons > button#append:hover {
+  background-color: #19d28b;
+}
+#todo_list .todo_item > #controller > #buttons > button#append:active {
+  background-color: #139060;
+}
+#input {
+  display: flex;
+  margin-left: 2%;
+  width: 100%;
+  overflow-wrap: anywhere;
+  font-family: "宋体";
+  font-size: 1.5rem;
+  min-height: 3.4rem;
+  resize: vertical;
+}

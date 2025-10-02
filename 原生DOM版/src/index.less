@@ -1,0 +1,245 @@
+// “待办事项”居中
+
+@box-width: 500px;
+@margin-top-and-bottom: 20px;
+
+@border-width: 5px;
+
+.my-border() {
+	border-width: @border-width;
+	border-color: rgb(36, 108, 61);
+	border-style: solid;
+	border-radius: 10px;
+}
+
+html {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: rgb(134, 243, 255);
+}
+
+main {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+// 标题：待办事项
+h1 {
+	margin-top: @margin-top-and-bottom;
+	margin-bottom: @margin-top-and-bottom;
+
+	text-align: center;
+	font-size: 2.5rem;
+	font-family: "微软雅黑";
+	font-weight: 700;
+
+	// 禁止用户选中
+	cursor: default;
+	user-select: none;
+
+
+}
+
+// 主列表
+#todo_list {
+	width: @box-width;
+	display: flex;
+	background-color: #24dd9f;
+
+	.my-border();
+	border-color: blue;
+
+	flex-direction: column;
+	justify-content: space-evenly;
+
+	// 每项待办事项方块
+	.todo_item {
+		padding-top: 10px;
+		padding-bottom: $padding-top;
+		margin-top: 20px;
+		margin-left: $margin-top;
+		margin-right: $margin-left;
+		background-color: rgb(38, 196, 213);
+		justify-content: space-evenly;
+		display: flex;
+		min-height: 60px;
+
+		.my-border();
+
+
+		&:last-child {
+			margin-bottom: $margin-top;
+			background-color: rgb(38, 196, 213);
+
+			&:hover {
+				background-color: rgb(38, 196, 213);
+			}
+
+		}
+
+		&:hover {
+			background-color: rgb(43, 226, 246);
+		}
+
+		// 待办事项文字
+		>#todo_words {
+			display: flex;
+			font-family: "宋体";
+			font-size: 1.5rem;
+			font-weight: 600;
+			text-align: left;
+			vertical-align: middle;
+			align-items: center;
+			width: 62%;
+			overflow-wrap: anywhere;
+		}
+
+		>#controller {
+			width: auto;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-evenly;
+			margin-top: calc(-1*$padding-top);
+			margin-bottom: $margin-top;
+
+
+			>#time_record {
+				display: flex;
+				cursor: default;
+			}
+
+
+			// 按钮区
+			>#buttons {
+				display: flex;
+				width: auto;
+				justify-content: space-evenly;
+
+				// 按钮们（默认是删除按钮）
+				>button {
+					// margin-left: auto;
+					// margin-right: 10px;
+					display: flex;
+					height: 30px;
+					width: $height;
+					border-radius: 10px;
+
+					margin-top: auto;
+					margin-bottom: $margin-top;
+
+					// 禁止用户选中
+					cursor: default;
+					user-select: none;
+
+					&:hover {
+						cursor: pointer;
+						background-color: rgb(207, 255, 85);
+					}
+
+
+					&:active {
+						background-color: rgb(255, 33, 33);
+
+					}
+
+					// 删除按钮
+					.x {
+						font-size: 40px;
+						margin-left: -4px;
+						margin-top: -9px;
+
+					}
+
+					// 状态按钮
+					&#state_button {
+						width: auto;
+						display: flex;
+						justify-content: center;
+						align-content: center;
+
+						// 重要
+						&.zhongyao {
+							background-color: rgb(255, 60, 60);
+
+							&:active {
+								background-color: rgb(48, 79, 255);
+							}
+						}
+
+						// 待办
+						&.daiban {
+							background-color: rgb(48, 79, 255);
+
+							&:active {
+								background-color: rgb(136, 136, 136);
+							}
+						}
+
+						// 既办
+						&.jiban {
+							background-color: rgb(150, 150, 150);
+
+							&:active {
+								background-color: rgb(255, 60, 60);
+							}
+						}
+
+						// 状态文字
+						>#state_words {
+							display: flex;
+							justify-content: center;
+							align-content: center;
+							color: #fff;
+							width: 30px;
+							text-align: center;
+
+						}
+					}
+
+					// 添加按钮 
+					&#append {
+						display: flex;
+						border-radius: 10px;
+						margin: auto;
+						width: 70%;
+						justify-content: space-evenly;
+						align-content: center;
+
+						font-family: "微软雅黑";
+						font-size: 1rem;
+						font-weight: 520;
+						text-align: justify;
+						line-height: 25px;
+
+						&:hover {
+							background-color: rgb(25, 210, 139);
+						}
+
+						&:active {
+							background-color: rgb(19, 144, 96);
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+// 输入框
+#input {
+	display: flex;
+	margin-left: 2%;
+	width: 100%;
+	overflow-wrap: anywhere;
+	font-family: "宋体";
+	font-size: 1.5rem;
+
+	min-height: 3.4rem;
+	resize: vertical;
+
+
+
+}

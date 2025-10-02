@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+	<meta charset="UTF-8">
+	<title>待办事项随身记</title>
+	<link rel="stylesheet" href="../src/reset.css">
+	<link rel="stylesheet" href="../src/all.css">
+	<link rel="stylesheet" href="../src/index.css">
+	<!-- 移动端状态栏（电量等）设置 -->
+	<meta name="theme-color" content="#000000">
+	<!-- 网站描述 -->
+	<meta name="description" content="待办事项">
+
+
+</head>
+
+<body>
+	<header>
+		<h1>待办事项</h1>
+	</header>
+	<main>
+
+
+		<!-- 主列表 -->
+		<div id="todo_list">
+			<!-- 单项待办事项 -->
+			<div class="todo_item">
+				<div id="todo_words">word我草</div>
+				<div id="controller">
+					<div id="time_record">2025/10/01/15:15</div>
+					<div id="buttons">
+						<button id="state_button" class="daiban">
+							<div id="state_words">待办</div>
+						</button>
+						<button id="del_item">
+							<div class="x">×</div>
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class="todo_item">
+				<div id="todo_words">word我草我草我草我草我草我草我草 我草我草我草我草 我草我草我草我草我草我草我草我草</div>
+				<div id="controller">
+					<div id="time_record">2025/10/01/15:15</div>
+					<div id="buttons">
+						<button id="state_button" class="jiban">
+							<div id="state_words">既办</div>
+						</button>
+						<button id="del_item">
+							<div class="x">×</div>
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class="todo_item">
+				<div id="todo_words">word我草</div>
+				<div id="controller">
+					<div id="time_record">2025/10/01/15:15</div>
+					<div id="buttons">
+						<button id="state_button" class="zhongyao">
+							<div id="state_words">重要</div>
+						</button>
+						<button id="del_item">
+							<div class="x">×</div>
+						</button>
+					</div>
+				</div>
+			</div>
+
+			<!-- 输入框与添加按钮 -->
+			<div id="input_box" class="todo_item">
+				<div id="todo_words"><textarea id="input"></textarea></div>
+				<div id="controller">
+					<div id="time_record">2025/10/01/15:15</div>
+					<div id="buttons">
+						<button id="append">
+
+							<div>添</div>
+							<div>加</div>
+
+
+						</button>
+					</div>
+				</div>
+			</div>
+
+
+		</div>
+	</main>
+	<footer>
+		<input type="file" id="fileInput">
+	</footer>
+
+
+
+
+
+	<!-- 提示浏览器不支持js -->
+	<noscript>抱歉，您的浏览器不支持JavaScript</noscript>
+
+</body>
+
+<!-- 引入js文件并标注好babel -->
+<script src="../src/main.js" type="text/babel"></script>
+
+
+</html>
