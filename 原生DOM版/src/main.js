@@ -20,18 +20,17 @@ function save(content = "", file_name = "") {
 	a.click();
 }
 
+// 把一个数字变成双位数的函数
+function two_digits(num) {
+	if ((0 <= num) && (num <= 9)) {
+		return `0${num}`
+	} else {
+		return `${num}`;
+	}
+}
+
 // 获取时间的函数
 function get_time() {
-
-	// 把一个数字变成双位数的函数
-	function two_digits(num) {
-		if ((0 <= num) && (num <= 9)) {
-			return `0${num}`
-		} else {
-			return `${num}`;
-		}
-	}
-
 	let d = new Date();
 	let year = `${d.getFullYear()}`;
 	let month = `${two_digits(d.getMonth() + 1)}`;
@@ -176,14 +175,40 @@ function append(words = "") {
 
 
 // 给“保存”按钮绑定“save”函数
-save_button.onclick = save;
+save_button.onclick = () => {
+	// 转换成JSON
+	let list = {};
+	for (let i = 0; i < todo_list.children.length - 1; i++) {
+		let words = todo_list.children[i].children[0].innerHTML;
+		let time = todo_list.children[i].children[1].children[0].innerHTML;
+		let state = todo_list.children[i].children[1].children[1].children[0].className;
+		let obj = {
+			"words": words,
+			"time": time,
+			"state": state,
+		}
+		list[`item_${i}`] = obj;
+	}
+	list = JSON.stringify(list);
+
+	let d = new Date();
+	let time = `${d.getFullYear()}_${two_digits(d.getMonth())}${two_digits(d.getDate())}_${two_digits(d.getHours())}${two_digits(d.getMinutes())}${two_digits(d.getSeconds())}.json`;
+
+	save(list, time);
+
+}
 
 // 给“读取”按钮绑定函数
 document.getElementById('fileInput').addEventListener('change', function (e) {
 	const file = e.target.files[0];
 	const reader = new FileReader();
 	reader.onload = function (e) {
-		console.log(e.target.result); // 文件内容
+		let content = JSON.parse(e.target.result);
+		for (const item_name of Object.keys(content)) {
+			let item = content[item_name];
+			// item["words"]
+		}
+
 	};
 	reader.readAsText(file); // 以文本形式读取
 });
@@ -206,5 +231,4 @@ setInterval(() => {
 
 
 // 将“待办事项”变成“待办事项*”以彰显其未被保存（或者修改“保存”为灰色状态等）
-// 删除动画平滑化
 // 可以通过拖动来调整列表项的顺序
