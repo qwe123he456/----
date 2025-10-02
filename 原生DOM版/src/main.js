@@ -76,13 +76,10 @@ function getStyle(
 
 /** 增添列表项 
  * @param words 待办事项的文字
+ * @param words 待办事项的创建时间
+ * @param words 待办事项的状态
  */
-function append(words = "") {
-
-	// 获取时间
-	let now = get_time();
-
-
+function append(words = "", time = "", state = "") {
 
 	// 在最后一项的后面创建这一列表项对象
 
@@ -97,11 +94,17 @@ function append(words = "") {
 	let todo_item = createElementByClassName("todo_item");
 	let x = createElementByClassName("x");
 	// 为对象们添加属性
-	state_button.className = "daiban";
+	state_button.className = state;
 	todo_words.innerHTML = words;
-	time_record.innerHTML = now;
-	state_words.innerHTML = "待办";
+	time_record.innerHTML = time;
 	x.innerHTML = "×";
+	if (state == "daiban") {
+		state_words.innerHTML = "待办";
+	} else if (state == "jiban") {
+		state_words.innerHTML = "既办";
+	} else {
+		state_words.innerHTML = "重要";
+	}
 
 
 	// 调整对象们之间的关系
@@ -199,14 +202,14 @@ save_button.onclick = () => {
 }
 
 // 给“读取”按钮绑定函数
-document.getElementById('fileInput').addEventListener('change', function (e) {
+document.getElementById('fileInput').addEventListener("input", function (e) {
 	const file = e.target.files[0];
 	const reader = new FileReader();
 	reader.onload = function (e) {
 		let content = JSON.parse(e.target.result);
 		for (const item_name of Object.keys(content)) {
 			let item = content[item_name];
-			// item["words"]
+			append(item["words"], item["time"], item["state"])
 		}
 
 	};
@@ -215,7 +218,7 @@ document.getElementById('fileInput').addEventListener('change', function (e) {
 
 // 给“添加”按钮绑定函数
 append_button.onclick = () => {
-	input_area.value ? append(input_area.value) : alert("请输入内容后再添加");
+	input_area.value ? append(input_area.value, get_time(), "daiban") : alert("请输入内容后再添加");
 }
 
 // “添加”区的时间随时改变
