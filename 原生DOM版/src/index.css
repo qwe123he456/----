@@ -24,6 +24,7 @@ h1 {
   width: 500px;
   display: flex;
   background-color: #24dd9f;
+  margin-bottom: 20px;
   border-width: 5px;
   border-color: #246c3d;
   border-style: solid;
@@ -97,10 +98,10 @@ h1 {
 }
 #todo_list .todo_item > #controller > #buttons > button:hover {
   cursor: pointer;
-  background-color: #cfff55;
+  background-color: rgba(143, 161, 96, 0.924);
 }
 #todo_list .todo_item > #controller > #buttons > button:active {
-  background-color: #ff2121;
+  background-color: #426e45;
 }
 #todo_list .todo_item > #controller > #buttons > button .x {
   font-size: 40px;
@@ -158,7 +159,7 @@ h1 {
 #todo_list .todo_item > #controller > #buttons > button#append:active {
   background-color: #139060;
 }
-#input {
+#input_area {
   display: flex;
   margin-left: 2%;
   width: 100%;
@@ -167,4 +168,56 @@ h1 {
   font-size: 1.5rem;
   min-height: 3.4rem;
   resize: vertical;
+}
+#IO {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  font-family: "微软雅黑";
+  font-size: 1rem;
+  font-weight: 520;
+  text-align: justify;
+  line-height: 25px;
+  cursor: default;
+  user-select: none;
+}
+#IO > div {
+  display: flex;
+  flex-direction: column;
+}
+#IO > div > .words {
+  text-align: center;
+  margin-left: 0;
+  margin-right: 0;
+}
+#IO > div > input {
+  border-width: 5px;
+  border-color: #246c3d;
+  border-style: solid;
+  border-radius: 10px;
+  border-width: 3px;
+}
+#IO > div > #save {
+  display: flex;
+  height: 30px;
+  width: 30px;
+  border-radius: 10px;
+  margin-top: auto;
+  margin-bottom: auto;
+  cursor: default;
+  user-select: none;
+  width: auto;
+  font-family: "微软雅黑";
+  font-size: 1rem;
+  font-weight: 520;
+  text-align: justify;
+  line-height: 25px;
+  justify-content: space-evenly;
+}
+#IO > div > #save:hover {
+  cursor: pointer;
+  background-color: rgba(143, 161, 96, 0.924);
+}
+#IO > div > #save:active {
+  background-color: #426e45;
 }

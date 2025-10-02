@@ -70,7 +70,7 @@
 
 			<!-- 输入框与添加按钮 -->
 			<div id="input_box" class="todo_item">
-				<div id="todo_words"><textarea id="input"></textarea></div>
+				<div id="todo_words"><textarea id="input_area"></textarea></div>
 				<div id="controller">
 					<div id="time_record">2025/10/01/15:15</div>
 					<div id="buttons">
@@ -89,7 +89,25 @@
 		</div>
 	</main>
 	<footer>
-		<input type="file" id="fileInput">
+		<div id="IO">
+			<!-- 读取文件 -->
+			<div>
+				<div class="words">
+					导入待办事项
+				</div>
+				<input type="file" id="fileInput">
+			</div>
+			<!-- 写入文件 -->
+			<div>
+				<div class="words">
+					导出待办事项
+				</div>
+				<button id="save">
+					<div>保</div>
+					<div>存</div>
+				</button>
+			</div>
+		</div>
 	</footer>
 
 
@@ -102,7 +120,7 @@
 </body>
 
 <!-- 引入js文件并标注好babel -->
-<script src="../src/main.js" type="text/babel"></script>
+<script src="../src/main.js"></script>
 
 
 </html>

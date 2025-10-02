@@ -5,11 +5,39 @@
 
 @border-width: 5px;
 
+// 自定义边框
 .my-border() {
 	border-width: @border-width;
 	border-color: rgb(36, 108, 61);
 	border-style: solid;
 	border-radius: 10px;
+}
+
+// 按钮普适样式
+.button-prevalent() {
+	display: flex;
+	height: 30px;
+	width: $height;
+	border-radius: 10px;
+
+	margin-top: auto;
+	margin-bottom: $margin-top;
+
+	// 禁止用户选中
+	cursor: default;
+	user-select: none;
+
+	// 鼠标悬于其上
+	&:hover {
+		cursor: pointer;
+		background-color: rgba(143, 161, 96, 0.924);
+	}
+
+	// 鼠标点击
+	&:active {
+		background-color: rgb(66, 110, 69);
+
+	}
 }
 
 html {
@@ -48,7 +76,7 @@ h1 {
 	width: @box-width;
 	display: flex;
 	background-color: #24dd9f;
-
+	margin-bottom: @margin-top-and-bottom;
 	.my-border();
 	border-color: blue;
 
@@ -120,30 +148,7 @@ h1 {
 
 				// 按钮们（默认是删除按钮）
 				>button {
-					// margin-left: auto;
-					// margin-right: 10px;
-					display: flex;
-					height: 30px;
-					width: $height;
-					border-radius: 10px;
-
-					margin-top: auto;
-					margin-bottom: $margin-top;
-
-					// 禁止用户选中
-					cursor: default;
-					user-select: none;
-
-					&:hover {
-						cursor: pointer;
-						background-color: rgb(207, 255, 85);
-					}
-
-
-					&:active {
-						background-color: rgb(255, 33, 33);
-
-					}
+					.button-prevalent();
 
 					// 删除按钮
 					.x {
@@ -229,7 +234,7 @@ h1 {
 }
 
 // 输入框
-#input {
+#input_area {
 	display: flex;
 	margin-left: 2%;
 	width: 100%;
@@ -242,4 +247,51 @@ h1 {
 
 
 
+}
+
+// 保存、读取区
+#IO {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+
+	font-family: "微软雅黑";
+	font-size: 1rem;
+	font-weight: 520;
+	text-align: justify;
+	line-height: 25px;
+
+	// 禁止用户选中
+	cursor: default;
+	user-select: none;
+
+	>div {
+		display: flex;
+		flex-direction: column;
+
+
+		>.words {
+			text-align: center;
+			margin-left: 0;
+			margin-right: $margin-left;
+		}
+
+		>input {
+			.my-border();
+			border-width: 3px;
+		}
+
+		// “保存”按钮
+		>#save {
+			.button-prevalent();
+			width: auto;
+
+			font-family: "微软雅黑";
+			font-size: 1rem;
+			font-weight: 520;
+			text-align: justify;
+			line-height: 25px;
+			justify-content: space-evenly;
+		}
+	}
 }
