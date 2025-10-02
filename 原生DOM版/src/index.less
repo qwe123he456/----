@@ -24,18 +24,17 @@
 	margin-bottom: $margin-top;
 
 	// 禁止用户选中
-	cursor: default;
 	user-select: none;
 
 	// 鼠标悬于其上
 	&:hover {
 		cursor: pointer;
-		background-color: rgba(143, 161, 96, 0.924);
+		background-color: rgb(255, 230, 0);
 	}
 
 	// 鼠标点击
 	&:active {
-		background-color: rgb(66, 110, 69);
+		background-color: rgb(255, 0, 0);
 
 	}
 }
@@ -134,7 +133,7 @@ h1 {
 			margin-bottom: $margin-top;
 
 
-			>#time_record {
+			>.time_record {
 				display: flex;
 				cursor: default;
 			}
@@ -245,6 +244,10 @@ h1 {
 	min-height: 3.4rem;
 	resize: vertical;
 
+	&:hover {
+		cursor: text;
+	}
+
 
 
 }
@@ -254,6 +257,7 @@ h1 {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-evenly;
+	margin-bottom: @margin-top-and-bottom;
 
 	font-family: "微软雅黑";
 	font-size: 1rem;
@@ -262,8 +266,9 @@ h1 {
 	line-height: 25px;
 
 	// 禁止用户选中
-	cursor: default;
 	user-select: none;
+
+
 
 	>div {
 		display: flex;
@@ -279,11 +284,24 @@ h1 {
 		>input {
 			.my-border();
 			border-width: 3px;
+
+			&:hover {
+				cursor: pointer;
+			}
 		}
 
 		// “保存”按钮
 		>#save {
 			.button-prevalent();
+
+			&:hover {
+				background-color: rgba(143, 161, 96, 0.924);
+			}
+
+			&:active {
+				background-color: rgb(66, 110, 69);
+			}
+
 			width: auto;
 
 			font-family: "微软雅黑";

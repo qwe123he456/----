@@ -25,7 +25,7 @@
 		<!-- 主列表 -->
 		<div id="todo_list">
 			<!-- 单项待办事项 -->
-			<div class="todo_item">
+			<!-- <div class="todo_item">
 				<div id="todo_words">word我草</div>
 				<div id="controller">
 					<div id="time_record">2025/10/01/15:15</div>
@@ -38,48 +38,17 @@
 						</button>
 					</div>
 				</div>
-			</div>
-			<div class="todo_item">
-				<div id="todo_words">word我草我草我草我草我草我草我草 我草我草我草我草 我草我草我草我草我草我草我草我草</div>
-				<div id="controller">
-					<div id="time_record">2025/10/01/15:15</div>
-					<div id="buttons">
-						<button id="state_button" class="jiban">
-							<div id="state_words">既办</div>
-						</button>
-						<button id="del_item">
-							<div class="x">×</div>
-						</button>
-					</div>
-				</div>
-			</div>
-			<div class="todo_item">
-				<div id="todo_words">word我草</div>
-				<div id="controller">
-					<div id="time_record">2025/10/01/15:15</div>
-					<div id="buttons">
-						<button id="state_button" class="zhongyao">
-							<div id="state_words">重要</div>
-						</button>
-						<button id="del_item">
-							<div class="x">×</div>
-						</button>
-					</div>
-				</div>
-			</div>
+			</div> -->
 
 			<!-- 输入框与添加按钮 -->
 			<div id="input_box" class="todo_item">
 				<div id="todo_words"><textarea id="input_area"></textarea></div>
 				<div id="controller">
-					<div id="time_record">2025/10/01/15:15</div>
+					<div class="time_record" id="current_time">2025/10/01/15:15</div>
 					<div id="buttons">
 						<button id="append">
-
 							<div>添</div>
 							<div>加</div>
-
-
 						</button>
 					</div>
 				</div>
@@ -93,14 +62,14 @@
 			<!-- 读取文件 -->
 			<div>
 				<div class="words">
-					导入待办事项
+					导入存档
 				</div>
 				<input type="file" id="fileInput">
 			</div>
 			<!-- 写入文件 -->
 			<div>
 				<div class="words">
-					导出待办事项
+					导出存档
 				</div>
 				<button id="save">
 					<div>保</div>
